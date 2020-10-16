@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ProgressBar from './ProgressBar';
-import Counter from './Counter';
+import WordCounter from './WordCounter';
 import Editor from './Editor';
 import SaveManager from './SaveManager';
 import countWords from './countWords';
@@ -30,7 +30,7 @@ class App extends React.Component {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
                     <p>
-                        React word counter with progress bar defaulting to 20 words
+                        React word counter with progress bar (defaulting up to 20 words)
                     </p>
                 </header>
 
@@ -39,7 +39,7 @@ class App extends React.Component {
                         onTextChange={this.handleTextChange}
                         text={text}
                     />
-                    <Counter count={wordCount}/>
+                    <WordCounter count={wordCount}/>
                     <ProgressBar completion={progress}/>
                     <SaveManager saveFunction={makeFakeRequest}
                                  data={this.state}/>
